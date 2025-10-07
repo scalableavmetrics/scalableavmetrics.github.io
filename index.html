@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="description"
+content="Scalable Offline Metrics for Autonomous Driving">
+<meta name="keywords" content="Scalable Offline Metrics, Autonomous Driving, Boston University">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scalable Offline Metrics for Autonomous Driving</title>
+
+<link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+rel="stylesheet">
+
+<link rel=stylesheet href=./static/css/bulma.min.css>
+<link rel=stylesheet href=./static/css/bulma-carousel.min.css>
+<link rel=stylesheet href=./static/css/bulma-slider.min.css>
+<link rel=stylesheet href=./static/css/fontawesome.all.min.css>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css>
+<link rel=stylesheet href=./static/css/index.css>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script defer src=./static/js/fontawesome.all.min.js></script>
+<script src=./static/js/bulma-carousel.min.js></script>
+<script src=./static/js/bulma-slider.min.js></script>
+<script src=./static/js/index.js></script>
+</head>
+<body>
+<section class="hero">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered">
+                <div class="column has-text-centered">
+                    <h1 class="title is-1 publication-title">Scalable Offline Metrics for Autonomous Driving</h1>
+                    <div class="is-size-5 publication-authors">
+                        <span class="author-block">
+                            Animikh Aich,
+                        </span>
+                        <span class="author-block">
+                            Adwait Kulkarni,
+                        </span>
+                        <span class="author-block">
+                            Eshed Ohn-Bar
+                        </span>
+                    </div>
+
+                    <div class="is-size-5 publication-authors">
+                        <span class="author-block">Boston University</span><br>
+                        <span class="author-block">IROS 2025</span>
+                    </div>
+                    <h2 class="subtitle has-text-centered">
+                        Coming Soon! 🏎️💨
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--
+<section class="hero is-light is-small">
+    <div class="hero-body">
+        <div class="container">
+            <div id="results-carousel" class="carousel results-carousel">
+                <div class="item item-video1">
+                    <video poster="" id="video1" autoplay controls muted loop height="100%">
+                        <source src="https://www.w3schools.com/html/mov_bbb.mp4"
+                        type="video/mp4">
+                    </video>
+                </div>
+                <div class="item item-video2">
+                    <video poster="" id="video2" autoplay controls muted loop height="100%">
+                        <source src="https://www.w3schools.com/html/mov_bbb.mp4"
+                        type="video/mp4">
+                    </video>
+                </div>
+                <div class="item item-video3">
+                    <video poster="" id="video3" autoplay controls muted loop height="100%">
+                        <source src="https://www.w3schools.com/html/mov_bbb.mp4"
+                        type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container is-max-desktop">
+        
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+                <h2 class="title is-3">Abstract</h2>
+                <div class="content has-text-justified">
+                    <p>
+                        Embodied vision-based real-world systems, such as mobile robots, require a careful balance between energy consumption, compute latency, and safety constraints to optimize operation across dynamic tasks and contexts. As local computation tends to be restricted, offloading the computation, ie, to a remote server, can save local resources while providing access to high-quality predictions from powerful and large models. However, the resulting communication and latency overhead has led to limited usability of cloud models in dynamic, safety-critical, real-time settings. To effectively address this trade-off, we introduce UniLCD, a novel hybrid inference framework for enabling flexible local-cloud collaboration. By efficiently optimizing a flexible routing module via reinforcement learning and a suitable multi-task objective, UniLCD is specifically designed to support the multiple constraints of safety-critical end-to-end mobile systems. We validate the proposed approach using a challenging, crowded navigation task requiring frequent and timely switching between local and cloud operations. UniLCD demonstrates improved overall performance and efficiency, by over 35% compared to state-of-the-art baselines based on various split computing and early exit strategies.
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+
+        
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+                <h2 class="title is-3">Motivation</h2>
+                <div class="content has-text-justified">
+                    <p>
+                        Our motivation is to solve the research question: How to realize robust vision-based systems that can be flexibly optimized for both safety and real-time efficiency while operating in dynamic real-world settings? Processing data through remote cloud servers can deliver high-quality model predictions but introduces latency that is unsuitable for dynamic real-world systems; hence, safety-critical and mobile systems often rely on local processing with model pruning and quantization to meet real-time constraints, though this can degrade accuracy and impact decision-making. Our algorithm proposes a generalized paradigm for situation-specific cloud-local collaboration that balances energy cost and accuracy, optimizing for latency, efficiency, and safety while supporting sustainable system operation.
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="columns is-centered">
+            <div class.column is-full-width">
+                <h2 class="title is-3">Method</h2>
+                <div class="content has-text-justified">
+                    <p>
+                        We develop a policy for dynamic local and cloud resource allocation to optimize energy efficiency and real-time performance. We achieve this through a formulation of the navigation task, imitation learning for local and cloud navigation policies, and Proximal Policy Optimization (PPO) for a sample-efficient routing policy with a multi-objective reward system.
+                    </p>
+                    <ol>
+                        <li>
+                            <b>Cloud and Local Policies:</b> We use a standard imitation learning with L1 error minimization approach to train navigation policies offline by collecting a diverse dataset from CARLA, featuring complex routes and weather conditions. Both local and cloud policies are developed with shared visual features and goal-conditional modules, where the local policy uses a smaller, optimized version of the pre-trained cloud policy, reducing computational costs.
+                        </li>
+<li>
+<b>Routing Policy:</b> We introduce a routing policy that optimally balances local and cloud computing resources using Proximal Policy Optimization (PPO), where the state space includes image embeddings and action history, and the action space is binary for selecting between local or cloud navigation. Our reward function integrates geodesic alignment, speed, energy efficiency, action clipping, and collision penalties to improve optimization and task performance, with specific penalties for sub-optimal actions and collisions to ensure effective and safe navigation.
+</li>
+</ol>
+<p>
+Here is a comprehensive summary of our algorithm.
+</p>
+</div>
+<div class="content has-text-centered">
+<img src="./static/images/method_overview.png"
+alt="method overview"
+width="80%">
+</div>
+</div>
+</div>
+
+<div class="columns is-centered">
+<div class="column is-full-width">
+<h2 class="title is-3">UniLCD Algorithm Diagram</h2>
+<div class="content has-text-justified">
+<p>
+The architecture diagram of our algorithm UniLCD is shown that features a situational routing module that utilizes current embeddings and a history of previous actions. Local actions are predicted by a pre-trained lightweight model for efficient deployment on mobile systems, while a sample-efficient routing module, trained via reinforcement learning, decides whether to execute local actions or transmit the scene embeddings to a more accurate but computationally intensive cloud server model.
+</p>
+</div>
+<div class="content has-text-centered">
+<img src="./static/images/unilcd_architecture.png"
+alt="unilcd architecture"
+width="80%">
+</div>
+</div>
+</div>
+
+<div class="columns is-centered">
+<div class="column is-full-width">
+<h2 class="title is-3">Result</h2>
+<div class="content has-text-justified">
+<p>
+Here is a comparison with previous work, highlighting how our framework addresses system safety, efficiency, and latency holistically, making it well-suited for real-time decision-making in dynamic scenes.
+</p>
+</div>
+<div class="content has-text-centered">
+<img src="./static/images/main_results.png"
+alt="main results"
+width="80%">
+<p>
+We present our algorithm tested on five distinct routes in CARLA's Town 10, with evaluation run comprising 30 episodes under varying weather conditions and traffic densities, showing that UniLCD with history achieves state-of-the-art performance. We categorize our comparative analysis between individual models (Local and Cloud only), baselines (Deep Learning and RL-based computational offloading research), and our proposed UniLCD variations, which show progressive improvement. † denotes methods transmitting raw input data to the cloud, i.e., instead of an embedding.
+</p>
+</div>
+<div class="content has-text-centered">
+<img src="./static/images/training_curve.png"
+alt="training curve"
+width="60%">
+<p>
+We map the performance improvement across the entire training process and plot the results, revealing a consistent increase in performance over time.
+</p>
+</div>
+</div>
+</div>
+
+<div class="columns is-centered">
+<div class="column is-full-width">
+<h2 class="title is-3">Video</h2>
+<div class="content has-text-centered">
+<video id="teaser" autoplay muted controls loop height="100%">
+<source src="./static/videos/unilcd_long_compressed.mp4"
+type="video/mp4">
+</video>
+</div>
+</div>
+</div>
+</div>
+</section>
+-->
+
+<footer class="footer">
+    <div class="container">
+        <div class="content has-text-centered">
+            <p>
+                Page template borrowed from <a href="https://github.com/nerfies/nerfies.github.io">D-NeRF</a>.
+            </p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
